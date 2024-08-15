@@ -1,5 +1,16 @@
-import React from 'react';
+import React ,{useEffect} from 'react';
+import ReactGA from 'react-ga';
 import './App.css';
+
+
+const TRACKING_ID = 'G-FDC4YZWNQ4'; 
+ReactGA.initialize(TRACKING_ID);
+
+const App = () => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [])
+}
 
 function App() {
   return (
